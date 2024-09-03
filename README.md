@@ -1,13 +1,12 @@
-# Проект 9-го спринта
+Ссылки на реджистри и работа с репозиторием:
 
-### Как работать с репозиторием
-1. В вашем GitHub-аккаунте автоматически создастся репозиторий `de-project-sprint-9` после того, как вы привяжете свой GitHub-аккаунт на Платформе.
-2. Скопируйте репозиторий на свой компьютер. В качестве пароля укажите ваш `Access Token`, который нужно получить на странице [Personal Access Tokens](https://github.com/settings/tokens)):
-	* `git clone https://github.com/{{ username }}/de-project-sprint-9.git`
-3. Перейдите в директорию с проектом: 
-	* `cd de-project-sprint-9`
-4. Выполните проект и сохраните получившийся код в локальном репозитории:
-	* `git add .`
-	* `git commit -m 'my best commit'`
-5. Обновите репозиторий в вашем GitHub-аккаунте:
-	* `git push origin main`
+cd C:\Users\User\de-project-sprint-9\solution
+docker compose up -d --build
+cd C:\Users\User\de-project-sprint-9\solution\service_dds
+docker build . -t cr.yandex/crp9ma5c91topbr50lv9/dds_service:v2024-03-09-r1
+docker push cr.yandex/crp9ma5c91topbr50lv9/dds_service:v2024-03-09-r1
+helm upgrade --install --atomic dds-service app -n c24-tarasov-danila
+cd C:\Users\User\de-project-sprint-9\solution\service_cdm
+docker build . -t cr.yandex/crp9ma5c91topbr50lv9/cdm_service:v2024-03-09-r1
+docker push cr.yandex/crp9ma5c91topbr50lv9/cdm_service:v2024-03-09-r1
+helm upgrade --install --atomic cdm-service app -n c24-tarasov-danila
